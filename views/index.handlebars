@@ -10,12 +10,9 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Scraped Articles</a></li>
-        <li><a href="#">Scrape New Articles</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li class="active"><a href="/">Home</a></li>
+        <li><a href="/saved">Saved Articles</a></li>
+        <li><a class="btn btn-danger scrape-new">Scrape New Articles</a></li>
       </ul>
     </div>
   </div>
@@ -33,8 +30,8 @@
   <div class="row">
     <div class="col-sm-3">
       {{#each result}}
-      <p id="title">{{result.title}}</p>
-      <p id="link">{{result.link}}</p>
+      <p>{{result.title}}</p>
+      <p>{{result.link}}</p>
       {{!-- <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"> --}}
     </div>
     

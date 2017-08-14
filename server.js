@@ -9,6 +9,7 @@ var Article = require("./models/Article.js");
 // Our scraping tools
 var request = require("request");
 var cheerio = require("cheerio");
+var expressHandlebars = require("express-handlebars");
 // Set mongoose to leverage built in JavaScript ES6 Promises
 mongoose.Promise = Promise;
 
@@ -20,6 +21,12 @@ app.use(logger("dev"));
 app.use(bodyParser.urlencoded({
   extended: false
 }));
+
+app.engine("handlebars", expressHandlebars({
+  defaultLayout: "main"
+}));
+
+app.set("view engine", "handlebars");
 
 // Make public a static dir
 app.use(express.static("public"));
@@ -38,7 +45,7 @@ db.once("open", function() {
   console.log("Mongoose connection successful.");
 });
 
-// A GET request to scrape the echojs website
+// A GET request to scrape the website
 app.get("/scrape", function(req, res) {
   // First, we grab the body of the html with request
   request("http://www.nytimes.com/", function(error, response, html) {
