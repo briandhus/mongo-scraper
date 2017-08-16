@@ -12,7 +12,7 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href="/">Home</a></li>
         <li><a href="/saved">Saved Articles</a></li>
-        <li><a class="btn btn-danger scrape-new">Scrape New Articles</a></li>
+        <li><a href="/scrape" class="btn btn-danger scrape-new">Scrape New Articles</a></li>
       </ul>
     </div>
   </div>
@@ -21,18 +21,17 @@
 <div class="jumbotron">
   <div class="container text-center">
     <h1>New York Times Scraper</h1>      
-    <p>Some text that represents "Me"...</p>
   </div>
 </div>
   
 <div class="container-fluid bg-3 text-center">    
-  <h3>Some of my Work</h3><br>
   <div class="row">
     <div class="col-sm-3">
-      {{#each result}}
-      <p>{{result.title}}</p>
-      <p>{{result.link}}</p>
+      {{#each articles}}
+      <p>{{title}}</p>
+      <p>{{link}}</p>
       {{!-- <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"> --}}
+      {{/each}}
     </div>
     
   </div>
@@ -41,10 +40,11 @@
 <div class="container-fluid bg-3 text-center">    
   <div class="row">
     <div class="col-sm-3">
-      {{#each result}}
-      <p>{{result.title}}</p>
-      <p>{{result.link}}</p>
+      {{#each articles}}
+      <p>{{title}}</p>
+      <p>{{link}}</p>
 {{!--       <img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"> --}}
+      {{/each}}
     </div>
   </div>
 </div><br><br>
@@ -52,6 +52,3 @@
 <footer class="container-fluid text-center">
   <p>NYT Scraper</p>
 </footer>
-
-</body>
-</html>
