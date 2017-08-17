@@ -76,9 +76,8 @@ function scrape(app) {
         });
 
       });
+      res.redirect("/");
     });
-    // Tell the browser that we finished scraping the text
-    res.send("Scrape Complete");
   });
 
   app.get("/articles", function(req, res) {
