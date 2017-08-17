@@ -18,7 +18,8 @@ $(document).on("click", "#scrape-new", function() {
 })
 
 // When you click the savenote button
-$(document).on("click", "#savenote", function() {
+$(document).on("click", "#saveArticle", function(event) {
+  event.preventDefault();
   // Grab the id associated with the article from the submit button
   var thisId = $(this).attr("data-id");
 
